@@ -1,6 +1,6 @@
 {
   "name": "transitioning-container",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.min.js",
@@ -8,6 +8,10 @@
   "repository": "git@github.com:AlbertLucianto/transitioning-container.git",
   "author": "AlbertLucianto <albertlucianto@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlbertLucianto/transitioning-container/issues"
+  },
+  "homepage": "https://github.com/AlbertLucianto/transitioning-container",
   "keywords": [
     "react",
     "transition",
@@ -26,6 +30,8 @@
   "devDependencies": {
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
+    "codecov": "^3.2.0",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
@@ -34,6 +40,7 @@
     "postcss-loader": "^3.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "rimraf": "^2.6.3",
     "rollup": "^1.4.1",
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-node-resolve": "^4.0.1",
@@ -45,6 +52,7 @@
     "ts-jest": "^24.0.0",
     "ts-loader": "^5.3.3",
     "tslint": "^5.13.1",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.3.3333",
     "uglify-es": "^3.3.9",
     "url-loader": "^1.1.2",

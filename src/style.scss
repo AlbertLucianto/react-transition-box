@@ -1,0 +1,8 @@
+.transitioning-container {
+  transition: width .2s ease, height .2s ease;
+
+  &__inner {
+    width: fit-content;
+    height: fit-content;
+  }
+}
