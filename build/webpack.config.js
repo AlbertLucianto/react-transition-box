@@ -49,7 +49,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx'],
   },
   devServer: {
     contentBase: 'dist',
