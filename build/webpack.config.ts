@@ -1,27 +1,27 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
 
 module.exports = {
   context: path.join(__dirname, '..'),
+  devServer: {
+    contentBase: 'dist',
+    port: 8080,
+  },
   devtool: 'inline-source-map',
   entry: './web/index.tsx',
-  output: {
-    path: path.join(__dirname, '../dist/web'),
-    filename: 'static/[name]-[hash].js',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      inject: true,
-      template: path.join(__dirname, '../web/index.html'),
-    }),
-  ],
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: 'ts-loader',
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
         test: /\.s?css$/,
@@ -38,21 +38,28 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         // Default fallback to 'file-loader'
         options: {
           limit: 10000,
           name: 'img/[name].[hash:7].[ext]',
         },
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       },
     ],
   },
+  output: {
+    filename: 'static/[name]-[hash].js',
+    path: path.join(__dirname, '../dist/web'),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      inject: true,
+      template: path.join(__dirname, '../web/index.html'),
+    }),
+  ],
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
-  },
-  devServer: {
-    contentBase: 'dist',
-    port: 8080,
   },
 };

@@ -1,12 +1,13 @@
-import resolve from 'rollup-plugin-node-resolve';
 import cjs from 'rollup-plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
+import typescript from 'rollup-plugin-typescript2';
 import ts from 'typescript';
 
-const pkg = require('../package.json');
+import pkg from '../package.json';
 
 export default {
+  external: ['react'],
   input: 'src/index.ts',
   output: [
     {
@@ -16,36 +17,40 @@ export default {
     {
       file: pkg.main,
       format: 'umd',
-      name: 'transitioning-container',
       globals: {
         react: 'React',
       },
+      name: 'transitioning-container',
     },
   ],
   plugins: [
     typescript({
-      typescript: ts,
       cacheRoot: './tmp',
       rollupCommonJSResolveHack: true,
+      typescript: ts,
     }),
     resolve({
-      jsnext: true,
-      main: true,
       browser: true,
       extensions: ['.ts', '.tsx', '.json'],
+      jsnext: true,
+      main: true,
     }),
     cjs({
       include: 'node_modules/**',
       namedExports: {
-        'node_modules/react/index.js': ['Component', 'PureComponent', 'Fragment', 'Children', 'createElement'],
+        'node_modules/react/index.js': [
+          'useEffect',
+          'useMemo',
+          'useRef',
+          'useState',
+        ],
       },
     }),
     replace({
-      VERSION: JSON.stringify(pkg.version),
+      'VERSION': JSON.stringify(pkg.version),
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   ],
-  external: ['react'],
   watch: {
     include: 'src/**',
   },

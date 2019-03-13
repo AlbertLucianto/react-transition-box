@@ -1,18 +1,18 @@
-import { minify } from 'uglify-es';
 import { uglify } from 'rollup-plugin-uglify';
-import base from './rollup.config';
+import { minify } from 'uglify-es';
+import base from './rollup.config.ts';
 
-const pkg = require('../package.json');
+import pkg from '../package.json';
 
 const config = Object.assign({}, base, {
   output: {
+    exports: 'named',
     file: pkg.unpkg,
     format: 'iife',
-    exports: 'named',
-    name: 'TransitioningContainer',
     globals: {
       react: 'React',
     },
+    name: 'TransitioningContainer',
   },
 });
 
