@@ -1,31 +1,73 @@
 import React, {
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
-import './style.scss';
 
 interface ITransitioningContainerProps {
   children: JSX.Element|string;
 }
 
+const objectStyle: React.CSSProperties = {
+  display: 'block',
+  height: '100%',
+  left: 0,
+  opacity: 0,
+  overflow: 'hidden',
+  pointerEvents: 'none',
+  position: 'absolute',
+  top: 0,
+  width: '100%',
+  zIndex: -1,
+};
+
+const innerStyle: React.CSSProperties = {
+  height: 'fit-content',
+  position: 'relative',
+  width: 'fit-content',
+};
+
+const containerStyle: React.CSSProperties = {
+  transition: 'width .2s ease, height .2s ease',
+};
+
 function TransitioningContainer({ children }: ITransitioningContainerProps) {
-  const ref: React.Ref<HTMLDivElement> = useRef(null);
+  const ref = useRef<HTMLObjectElement>(null);
   const [style, setStyle] = useState(null);
 
   useEffect(() => {
-    const onResizeSetStyle = (e: UIEvent) => {
-      const { width, height } = (e.target as HTMLDivElement).getBoundingClientRect();
+    const el = ref.current;
+    const onResize = () => {
+      const width = el.offsetWidth;
+      const height = el.offsetHeight;
       setStyle({ width, height });
     };
 
-    ref.current.addEventListener('resize', onResizeSetStyle);
-    return ref.current.removeEventListener('resize', onResizeSetStyle);
-  }, [ref]);
+    onResize();
+
+    const target = el.contentDocument.defaultView;
+    target.addEventListener('resize', onResize);
+
+    return () => target.removeEventListener('resize', onResize);
+  });
+
+  const mergedStyle = useMemo(() => ({
+    ...style,
+    ...containerStyle,
+  }), [style]);
 
   return (
-    <div style={style}>
-      <div ref={ref} className="transitioning-container__inner">
+    <div style={mergedStyle}>
+      <div style={innerStyle}>
+        <object
+          ref={ref}
+          data="about:blank"
+          aria-hidden={true}
+          aria-label="resize-listener"
+          style={objectStyle}
+          tabIndex={-1}
+        />
         {children}
       </div>
     </div>
