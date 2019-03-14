@@ -7,7 +7,7 @@ import img4 from '../../assets/4.jpeg';
 import img5 from '../../assets/5.jpeg';
 import img6 from '../../assets/6.jpeg';
 
-export default [
+const images = [
   img1,
   img2,
   img3,
@@ -15,3 +15,12 @@ export default [
   img5,
   img6,
 ];
+
+const preloadImage = (url: string) => {
+  const img = new Image();
+  img.src = url;
+};
+
+images.forEach(preloadImage);
+
+export default images;

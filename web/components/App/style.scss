@@ -78,6 +78,7 @@ button {
   
   &__image {
     width: 100%;
+    min-height: 300px;
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;
   }

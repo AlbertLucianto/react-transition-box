@@ -17,7 +17,7 @@ const TIMEOUT = {
   enter: 500,
   exit: 250,
 };
-const TRANSITION_DURATION = 600;
+const TRANSITION_DURATION = 200;
 
 function App() {
   const [num, setNumber] = useState(0);
