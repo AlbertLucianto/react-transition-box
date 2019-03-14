@@ -1,9 +1,14 @@
 import React, {
-  useEffect,
   useMemo,
   useRef,
   useState,
 } from 'react';
+import {
+  createContainerStyle,
+  innerStyle,
+  objectStyle,
+} from './styles';
+import useResizeListener from './useResizeListener';
 
 interface ITransitioningContainerProps {
   children: JSX.Element|string;
@@ -11,37 +16,14 @@ interface ITransitioningContainerProps {
   [props: string]: any;
 }
 
-const objectStyle: React.CSSProperties = {
-  display: 'block',
-  height: '100%',
-  left: 0,
-  opacity: 0,
-  overflow: 'hidden',
-  pointerEvents: 'none',
-  position: 'absolute',
-  top: 0,
-  width: '100%',
-  zIndex: -1,
-};
-
-const innerStyle: React.CSSProperties = {
-  height: 'fit-content',
-  position: 'relative',
-  width: 'fit-content',
-};
-
-const createContainerStyle = (duration: number): React.CSSProperties => ({
-  transition: 'width .2s ease, height .2s ease',
-});
-
 function TransitioningContainer({
   children,
   duration,
   style: propStyle,
-  restProps,
+  ...restProps
 }: ITransitioningContainerProps) {
   const ref = useRef<HTMLObjectElement>(null);
-  const [style, setStyle] = useState(null);
+  const [style, setStyle] = useState({});
   const containerStyle = useMemo(() => createContainerStyle(duration), [duration]);
 
   const mergedStyle = useMemo(() => ({
@@ -50,21 +32,7 @@ function TransitioningContainer({
     ...(propStyle || {}),
   }), [style, propStyle]);
 
-  useEffect(() => {
-    const el = ref.current;
-    const onResize = () => {
-      const width = el.offsetWidth;
-      const height = el.offsetHeight;
-      setStyle({ width, height });
-    };
-
-    onResize();
-
-    const target = el.contentDocument.defaultView;
-    target.addEventListener('resize', onResize);
-
-    return () => target.removeEventListener('resize', onResize);
-  });
+  useResizeListener(ref, setStyle);
 
   return (
     <div style={mergedStyle} {...restProps}>
@@ -76,6 +44,7 @@ function TransitioningContainer({
           aria-label="resize-listener"
           style={objectStyle}
           tabIndex={-1}
+          type="text/html"
         />
         {children}
       </div>
