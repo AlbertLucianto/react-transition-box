@@ -33,6 +33,7 @@
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
     "@types/react-transition-group": "^2.0.16",
+    "@types/rollup": "^0.54.0",
     "@types/rollup-plugin-commonjs": "^9.2.0",
     "@types/rollup-plugin-node-resolve": "^4.0.0",
     "@types/webpack": "^4.4.25",
@@ -78,7 +79,5 @@
     "react": "^16.8",
     "react-dom": "^16.8"
   },
-  "dependencies": {
-    "@types/rollup": "^0.54.0"
-  }
+  "dependencies": {}
 }
