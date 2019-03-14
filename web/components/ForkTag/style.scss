@@ -1,0 +1,42 @@
+.fork-tag {
+  position: fixed;
+  z-index: 100;
+  top: 20px;
+  right: -35px;
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
+  background-color: #EEE;
+  transform: rotate(45deg);
+  transition: background-color .5s ease;
+
+  .github-icon {
+    width: 20px;
+    opacity: .7;
+  }
+
+  .fork-tag__description {
+    position: absolute;
+    bottom: -20px;
+    opacity: 0;
+    font-weight: 500;
+    transition: all .2s ease;
+    pointer-events: none;
+    z-index: 0;
+    color: #333333;
+  }
+
+  &:hover {
+    transition: background-color .2s ease;
+    background-color: #DDD;
+    cursor: pointer;
+
+    .fork-tag__description {
+      opacity: .7;
+      bottom: -30px;
+    }
+  }
+}

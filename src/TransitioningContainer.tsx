@@ -7,6 +7,8 @@ import React, {
 
 interface ITransitioningContainerProps {
   children: JSX.Element|string;
+  duration: number;
+  [props: string]: any;
 }
 
 const objectStyle: React.CSSProperties = {
@@ -28,13 +30,25 @@ const innerStyle: React.CSSProperties = {
   width: 'fit-content',
 };
 
-const containerStyle: React.CSSProperties = {
+const createContainerStyle = (duration: number): React.CSSProperties => ({
   transition: 'width .2s ease, height .2s ease',
-};
+});
 
-function TransitioningContainer({ children }: ITransitioningContainerProps) {
+function TransitioningContainer({
+  children,
+  duration,
+  style: propStyle,
+  restProps,
+}: ITransitioningContainerProps) {
   const ref = useRef<HTMLObjectElement>(null);
   const [style, setStyle] = useState(null);
+  const containerStyle = useMemo(() => createContainerStyle(duration), [duration]);
+
+  const mergedStyle = useMemo(() => ({
+    ...style,
+    ...containerStyle,
+    ...(propStyle || {}),
+  }), [style, propStyle]);
 
   useEffect(() => {
     const el = ref.current;
@@ -52,13 +66,8 @@ function TransitioningContainer({ children }: ITransitioningContainerProps) {
     return () => target.removeEventListener('resize', onResize);
   });
 
-  const mergedStyle = useMemo(() => ({
-    ...style,
-    ...containerStyle,
-  }), [style]);
-
   return (
-    <div style={mergedStyle}>
+    <div style={mergedStyle} {...restProps}>
       <div style={innerStyle}>
         <object
           ref={ref}
