@@ -1,17 +1,17 @@
 {
-  "name": "transitioning-container",
-  "version": "0.0.3",
+  "name": "react-transitioning-container",
+  "version": "0.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.min.js",
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:AlbertLucianto/transitioning-container.git",
+  "repository": "git@github.com:AlbertLucianto/react-transitioning-container.git",
   "author": "AlbertLucianto <albertlucianto@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlbertLucianto/transitioning-container/issues"
+    "url": "https://github.com/AlbertLucianto/react-transitioning-container/issues"
   },
-  "homepage": "https://github.com/AlbertLucianto/transitioning-container",
+  "homepage": "https://github.com/AlbertLucianto/react-transitioning-container",
   "keywords": [
     "react",
     "transition",
@@ -64,7 +64,7 @@
     "rollup-plugin-uglify": "^6.0.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "transitioning-container": "^0.0.2",
+    "react-transitioning-container": "^0.0.1",
     "ts-jest": "^24.0.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.3",
