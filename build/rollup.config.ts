@@ -26,6 +26,7 @@ export default {
   plugins: [
     typescript({
       cacheRoot: './tmp',
+      clean: true,
       rollupCommonJSResolveHack: true,
       typescript: ts,
     }),
