@@ -1,0 +1,70 @@
+.label {
+  margin-top: 12px;
+  font-size: 14px;
+  display: inline-block;
+
+  &.invalid {
+    color: #DB2B30;
+  }
+}
+
+.input {
+  margin: 8px 0;
+  font-size: 14px;
+  height: 36px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: solid 1px rgba(#1b3969, .2);
+  box-shadow: 0 5px 15px -5px rgba(#1b3969, .1);
+  padding: 12px;
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
+
+  &:hover {
+    border: solid 1px rgba(#1b3969, .3);
+  }
+
+  &:focus {
+    border: solid 1px rgba(#1b3969, .4);
+    outline: none;
+  }
+
+  &.invalid {
+    border-color: rgba(#DB2B30, .8);
+    animation: shake .5s ease-in forwards;
+  }
+
+  &::placeholder {
+    color: rgba(#1b3969, .3);
+    font-size: 13px;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+  
+    6.5% {
+      transform: translateX(-8px) rotateY(-9deg);
+    }
+  
+    18.5% {
+      transform: translateX(6px) rotateY(7deg);
+    }
+  
+    31.5% {
+      transform: translateX(-4px) rotateY(-5deg);
+    }
+  
+    43.5% {
+      transform: translateX(3px) rotateY(3deg);
+    }
+  
+    50% {
+      transform: translateX(0);
+    }
+  }
+}

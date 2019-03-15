@@ -1,0 +1,17 @@
+.third-party {
+  display: flex;
+  justify-content: space-around;
+  background-color: #FAFAFA;
+  width: 450px;
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  &__button {
+    box-shadow: 0 5px 8px rgba(#1b3969, .1);
+    background-color: white;
+  }
+}

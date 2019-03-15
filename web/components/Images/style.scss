@@ -1,0 +1,67 @@
+$radius: 12px;
+
+.images {
+  width: 100%;
+  max-width: 450px;
+  margin: 60px auto;
+  background-color: white;
+  box-shadow: 0 25px 45px -10px rgba(black, .2);
+  border-radius: $radius;
+  overflow: hidden;
+
+  &__image-container {
+    width: 450px;
+  }
+  
+  &__image {
+    width: 100%;
+    min-height: 300px;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+
+  &__button {
+    &--previous {
+      color: #1b3969;
+      box-shadow: 0 0 1px rgba(#1b3969, .4);
+    }
+  
+    &--next {
+      background-color: #1b3969;
+      box-shadow: 0 5px 8px -2px rgba(#1b3969, .4);
+      color: white;
+    }
+  
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: -5px;
+    }
+  }
+
+  &__image--fade {
+    &-enter {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+    
+    &-enter-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: all .5s ease;
+    }
+    
+    &-exit {
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    &-exit-active {
+      opacity: 0;
+      transition: all .5s ease;
+    }
+  }
+}
+

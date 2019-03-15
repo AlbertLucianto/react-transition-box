@@ -12,6 +12,7 @@ import useResizeListener from './useResizeListener';
 
 interface ITransitioningContainerProps {
   children: JSX.Element|string;
+  timingFunction?: string;
   duration: number;
   [props: string]: any;
 }
@@ -19,12 +20,13 @@ interface ITransitioningContainerProps {
 function TransitioningContainer({
   children,
   duration,
+  timingFunction,
   style: propStyle,
   ...restProps
 }: ITransitioningContainerProps) {
   const ref = useRef<HTMLObjectElement>(null);
   const [style, setStyle] = useState({});
-  const containerStyle = useMemo(() => createContainerStyle(duration), [duration]);
+  const containerStyle = useMemo(() => createContainerStyle(duration, timingFunction), [duration]);
 
   const mergedStyle = useMemo(() => ({
     ...style,
