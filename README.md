@@ -38,10 +38,10 @@ export default function App() {
 Name         | Description | Type
 -------------|-----------|-----------
 `duration` | Transition duration ms. | `number`
+`timingFunction?` | Transition duration ms. Default: `'ease'` | `string`
 `children` | Content, which is watched its size | `Node`
-`...others` | Other valid `div` attributes. | `any`
-
+`...others` | Other valid attributes to be added to the root `div`. | `any`
 
 ## License
 
-transitioning-container is available under the MIT License.
+react-transitioning-container is available under the MIT License.

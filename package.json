@@ -29,6 +29,7 @@
     "coverage": "codecov -f __test__/coverage/coverage-final.json"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.7",
     "@types/html-webpack-plugin": "^3.2.0",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.11.3",
@@ -42,6 +43,7 @@
     "@types/webpack": "^4.4.25",
     "@types/webpack-dev-server": "^3.1.4",
     "autoprefixer": "^9.4.10",
+    "classnames": "^2.2.6",
     "codecov": "^3.2.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
