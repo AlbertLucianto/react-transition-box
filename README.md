@@ -1,7 +1,8 @@
 <p align="center"><a href="https://albertlucianto.github.io/react-transitioning-container" target="_blank" rel="noopener noreferrer"><img width="800" src="./web/assets/react-transitioning-container-header.jpg" alt="React Transitioning Container"></a></p>
 
+<p align="center">React component for smoothly changing your container size 🎁</p>
+
 <p align="center">
-<!-- <a href="https://codecov.io/github/AlbertLucianto/react-transitioning-container?branch=master"><img src="https://img.shields.io/codecov/c/github/AlbertLucianto/react-transitioning-container/master.svg" alt="Coverage Status"></a> -->
 <a href="https://travis-ci.org/AlbertLucianto/react-transitioning-container"><img src="https://travis-ci.org/AlbertLucianto/react-transitioning-container.svg?branch=master" alt="Build Status"></a>
 <a href="https://npmcharts.com/compare/react-transitioning-container?minimal=true"><img src="https://img.shields.io/npm/dm/react-transitioning-container.svg" alt="Downloads"></a>
 <a href="https://npmcharts.com/compare/react-transitioning-container?minimal=true"><img src="https://img.shields.io/npm/dt/react-transitioning-container.svg" alt="Downloads"></a>
@@ -9,6 +10,8 @@
 <a href="https://www.npmjs.com/package/react-transitioning-container"><img src="https://img.shields.io/npm/l/react-transitioning-container.svg" alt="License"></a>
 <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)" alt="License"></a>
 </p>
+
+<hr />
 
 ## See working example [here](https://albertlucianto.github.io/react-transitioning-container).
 
@@ -21,13 +24,17 @@ $ yarn add react-transitioning-container # or using npm
 ## Usage
 
 ```jsx
+import React from 'react';
 import TransitioningContainer from 'react-transitioning-container';
-import Foo from './Foo';
+import LargeContent from './LargeContent';
+import SmallContent from './SmallContent';
 
-export default function App() {
-  <TransitioningContainer duration={500}>
-    <Foo />
-  </TransitioningContainer>
+export default function App({ isLarge }) {
+  return (
+    <TransitioningContainer duration={500}>
+      {isLarge ? <LargeContent /> : <SmallContent />}
+    </TransitioningContainer>
+  );
 }
 ```
 
