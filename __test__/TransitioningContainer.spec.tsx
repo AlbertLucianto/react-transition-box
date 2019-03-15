@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { create } from 'react-test-renderer';
 import TransitioningContainer from '../src';
-
-afterEach(cleanup);
 
 const waitFor = async (ms: number) => new Promise((resolve) => {
   setTimeout(resolve, ms);
@@ -15,42 +13,69 @@ interface IFooProps {
 
 function Foo({ width, height }: IFooProps) {
   const style = useMemo(() => ({ width, height }), [width, height]);
+
   return (
     <TransitioningContainer
       duration={100}
+      timingFunction="ease"
       className="foo__container"
     >
-      <div style={style} />
+      <div style={style} className="abc" />
     </TransitioningContainer>
   );
 }
 
 describe('TransitioningContainer', () => {
   test('should render correctly', async (done) => {
-    const container = render(<Foo
-      width={100}
-      height={200}
-    />);
+    const style = {
+      height: 200,
+      width: 100,
+    };
 
-    const el: HTMLDivElement = container.baseElement.querySelector('.foo__container');
-    expect(el.style.width).toBe('0px');
-    expect(el.style.height).toBe('0px');
+    const addListenerMock = jest.fn();
+    const removeListenerMock = jest.fn();
 
-    await waitFor(100);
-    expect(el.style.width).toBe(100);
-    expect(el.style.height).toBe(200);
+    const el = create(
+      <Foo width={style.width} height={style.height} />,
+      {
+        createNodeMock(element: JSX.Element) {
+          if (element.type === 'object') {
+            return {
+              contentDocument: {
+                defaultView: {
+                  addEventListener(type: string, fn: () => void) {
+                    addListenerMock(type);
+                  },
+                  removeEventListener(type: string, fn: () => void) {
+                    removeListenerMock(type);
+                  },
+                },
+              },
+              offsetHeight: style.height,
+              offsetWidth: style.width,
+            };
+          }
 
-    container.rerender(<Foo
-      width={150}
-      height={100}
-    />);
+          return null;
+        },
+      },
+    );
+    expect(el.toJSON()).toMatchSnapshot();
+    expect(addListenerMock).not.toHaveBeenCalled();
+    expect(removeListenerMock).not.toHaveBeenCalled();
 
-    expect(el.style.width).toBe(100);
-    expect(el.style.height).toBe(200);
+    expect(removeListenerMock).not.toHaveBeenCalled();
 
-    await waitFor(100);
-    expect(el.style.width).toBe(150);
-    expect(el.style.height).toBe(100);
+    style.width = 150;
+    style.height = 100;
+    el.update(<Foo width={style.width} height={style.height} />);
+    expect(el.toJSON()).toMatchSnapshot();
+
+    await waitFor(120);
+    expect(el.toJSON()).toMatchSnapshot();
+
+    el.unmount();
+    expect(removeListenerMock).toHaveBeenNthCalledWith(1, 'resize');
 
     done();
   });

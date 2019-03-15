@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransitioningContainer should render correctly 1`] = `
+<div
+  className="foo__container"
+  style={
+    Object {
+      "transition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
+    }
+  }
+  timingFunction="ease"
+>
+  <div
+    style={
+      Object {
+        "height": "fit-content",
+        "position": "relative",
+        "width": "fit-content",
+      }
+    }
+  >
+    <object
+      aria-hidden={true}
+      aria-label="resize-listener"
+      data="about:blank"
+      style={
+        Object {
+          "display": "block",
+          "height": "100%",
+          "left": 0,
+          "opacity": 0,
+          "overflow": "hidden",
+          "pointerEvents": "none",
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+          "zIndex": -1,
+        }
+      }
+      tabIndex={-1}
+      type="text/html"
+    />
+    <div
+      className="abc"
+      style={
+        Object {
+          "height": 200,
+          "width": 100,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`TransitioningContainer should render correctly 2`] = `
+<div
+  className="foo__container"
+  style={
+    Object {
+      "height": 200,
+      "transition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
+      "width": 100,
+    }
+  }
+  timingFunction="ease"
+>
+  <div
+    style={
+      Object {
+        "height": "fit-content",
+        "position": "relative",
+        "width": "fit-content",
+      }
+    }
+  >
+    <object
+      aria-hidden={true}
+      aria-label="resize-listener"
+      data="about:blank"
+      style={
+        Object {
+          "display": "block",
+          "height": "100%",
+          "left": 0,
+          "opacity": 0,
+          "overflow": "hidden",
+          "pointerEvents": "none",
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+          "zIndex": -1,
+        }
+      }
+      tabIndex={-1}
+      type="text/html"
+    />
+    <div
+      className="abc"
+      style={
+        Object {
+          "height": 100,
+          "width": 150,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`TransitioningContainer should render correctly 3`] = `
+<div
+  className="foo__container"
+  style={
+    Object {
+      "height": 200,
+      "transition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
+      "width": 100,
+    }
+  }
+  timingFunction="ease"
+>
+  <div
+    style={
+      Object {
+        "height": "fit-content",
+        "position": "relative",
+        "width": "fit-content",
+      }
+    }
+  >
+    <object
+      aria-hidden={true}
+      aria-label="resize-listener"
+      data="about:blank"
+      style={
+        Object {
+          "display": "block",
+          "height": "100%",
+          "left": 0,
+          "opacity": 0,
+          "overflow": "hidden",
+          "pointerEvents": "none",
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+          "zIndex": -1,
+        }
+      }
+      tabIndex={-1}
+      type="text/html"
+    />
+    <div
+      className="abc"
+      style={
+        Object {
+          "height": 100,
+          "width": 150,
+        }
+      }
+    />
+  </div>
+</div>
+`;
