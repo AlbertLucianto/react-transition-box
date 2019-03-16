@@ -1,6 +1,6 @@
 {
   "name": "react-transitioning-container",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.min.js",
