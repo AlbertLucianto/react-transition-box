@@ -26,7 +26,10 @@ function TransitioningContainer({
 }: ITransitioningContainerProps) {
   const ref = useRef<HTMLObjectElement>(null);
   const [style, setStyle] = useState({});
-  const containerStyle = useMemo(() => createContainerStyle(duration, timingFunction), [duration]);
+  const containerStyle = useMemo(
+    () => createContainerStyle(duration, timingFunction),
+    [duration, timingFunction],
+  );
 
   const mergedStyle = useMemo(() => ({
     ...style,
