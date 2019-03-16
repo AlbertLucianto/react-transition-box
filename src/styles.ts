@@ -20,9 +20,15 @@ export const innerStyle: React.CSSProperties = {
 export const createContainerStyle = (
   duration: number,
   timingFunction: string = 'ease',
-): React.CSSProperties => ({
-  transition: `
+): React.CSSProperties => {
+  const transition = `
     width ${duration}ms ${timingFunction},
     height ${duration}ms ${timingFunction}
-  `,
-});
+  `;
+
+  return {
+    OTransition: transition,
+    WebkitTransition: transition,
+    transition,
+  };
+};
