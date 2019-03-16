@@ -12,6 +12,7 @@ function App() {
         <div className="title--small">React</div>
         Transitioning Container
       </h1>
+      <pre>yarn add react-transitioning-container</pre>
       <Images />
       <Forms />
       <ForkTag />

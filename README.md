@@ -1,6 +1,6 @@
 <p align="center"><a href="https://albertlucianto.github.io/react-transitioning-container" target="_blank" rel="noopener noreferrer"><img width="800" src="./web/assets/react-transitioning-container-header.jpg" alt="React Transitioning Container"></a></p>
 
-<p align="center">React component for smoothly changing your container size 🎁</p>
+<p align="center">React component for easily transitioning your container size based on children 🎁</p>
 
 <p align="center">
 <a href="https://travis-ci.org/AlbertLucianto/react-transitioning-container"><img src="https://travis-ci.org/AlbertLucianto/react-transitioning-container.svg?branch=master" alt="Build Status"></a>
@@ -11,9 +11,9 @@
 <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)" alt="License"></a>
 </p>
 
-<hr />
+<p align="center"><a href="https://albertlucianto.github.io/react-transitioning-container" target="_blank" rel="noopener noreferrer"><img width="280" src="./web/assets/demo.gif" alt="React Transitioning Container"></a></p>
 
-## See working example [here](https://albertlucianto.github.io/react-transitioning-container).
+<h2 align="center">See working example <a href="https://albertlucianto.github.io/react-transitioning-container" target="_blank" rel="noopener noreferrer">here</a>.</h2>
 
 ## Installation
 
