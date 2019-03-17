@@ -11,7 +11,7 @@ import {
 import useResizeListener from './useResizeListener';
 
 interface ITransitioningContainerProps {
-  children: JSX.Element|string;
+  children: JSX.Element[]|JSX.Element|string;
   timingFunction?: string;
   duration: number;
   [props: string]: any;
