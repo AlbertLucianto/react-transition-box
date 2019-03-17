@@ -44,9 +44,9 @@ export default function App({ isLarge }) {
 
 Name         | Description | Type
 -------------|-----------|-----------
-`duration` | Transition duration ms. | `number`
-`timingFunction?` | Transition duration ms. Default: `'ease'` | `string`
-`children` | Content, which is watched its size | `Node`
+`duration` | Transition duration in ms. | `number`
+`timingFunction?` | Transition timing function. Default: `'ease'` | `string`
+`children` | Content, which is watched its size | `Node|string`
 `...others` | Other valid attributes to be added to the root `div`. | `any`
 
 ## License
