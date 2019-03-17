@@ -11,6 +11,7 @@ $radius: 12px;
 
   &__form-container {
     width: 450px;
+    max-width: calc(100vw - 20px);
   }
 
   &__button {
