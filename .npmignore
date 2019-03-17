@@ -10,3 +10,4 @@ tslint.json
 .travis.yml
 codecov.yml
 tmp
+dist/web
