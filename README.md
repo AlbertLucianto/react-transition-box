@@ -1,6 +1,11 @@
 <p align="center"><a href="https://albertlucianto.github.io/react-transitioning-container" target="_blank" rel="noopener noreferrer"><img width="800" src="./web/assets/react-transitioning-container-header.jpg" alt="React Transitioning Container"></a></p>
 
-<p align="center">React component for easily transitioning your container size based on children 🎁</p>
+<p align="center">React component for easily transitioning your container size based on children 🎁
+<br />
+<br />
+Implemented using <b>React Hooks</b> and make use of
+<br />
+<b>HTMLObjectElement</b> for listening to your component resize ↔️ ↕️ events</p>
 
 <p align="center">
 <a href="https://travis-ci.org/AlbertLucianto/react-transitioning-container"><img src="https://travis-ci.org/AlbertLucianto/react-transitioning-container.svg?branch=master" alt="Build Status"></a>
@@ -46,7 +51,7 @@ Name         | Description | Type
 -------------|-----------|-----------
 `duration` | Transition duration in ms. | `number`
 `timingFunction?` | Transition timing function. Default: `'ease'` | `string`
-`children` | Content, which is watched its size | `Node|string`
+`children` | Its size changes will trigger the container transition. | `Node` or `string`
 `...others` | Other valid attributes to be added to the root `div`. | `any`
 
 ## License
