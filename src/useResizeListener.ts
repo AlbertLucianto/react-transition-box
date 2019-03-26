@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 
 /**
- * 
- * @param ref 
- * @param setStyle 
+ * Hook `useEffect` to listen to resize event and
+ * clean up on ref changes or unmount.
+ * Fallback to doing nothing if `HTMLObjectElement` does
+ * not have `contentDocument` inside (e.g. in test env).
+ *
+ * @param {React.MutableRefObject<HTMLObjectElement>} ref
+ * @param {React.Dispatch<object>} setStyle
  */
 export default function useResizeListener(
   ref: React.MutableRefObject<HTMLObjectElement>,

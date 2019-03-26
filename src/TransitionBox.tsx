@@ -18,8 +18,12 @@ interface ITransitionBoxProps {
 }
 
 /**
- * 
- * @param param0 
+ * React component for easily transitioning your container size based on children 🎁
+ *
+ * HTML Element normally does not have a resize listener.
+ * So, it uses `HTMLObjectElement` for listening to your component resize.
+ *
+ * @param {ITransitionBoxProps} props
  */
 function TransitionBox({
   children,
