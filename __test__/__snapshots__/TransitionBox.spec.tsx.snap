@@ -1,17 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TransitioningContainer should render correctly 1`] = `
+exports[`TransitionBox should render correctly 1`] = `
 <div
   className="foo__container"
   style={
     Object {
+      "OTransition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
+      "WebkitTransition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
       "transition": "
     width 100ms ease,
     height 100ms ease
   ",
     }
   }
-  timingFunction="ease"
 >
   <div
     style={
@@ -56,11 +63,19 @@ exports[`TransitioningContainer should render correctly 1`] = `
 </div>
 `;
 
-exports[`TransitioningContainer should render correctly 2`] = `
+exports[`TransitionBox should render correctly 2`] = `
 <div
   className="foo__container"
   style={
     Object {
+      "OTransition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
+      "WebkitTransition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
       "height": 200,
       "transition": "
     width 100ms ease,
@@ -69,7 +84,6 @@ exports[`TransitioningContainer should render correctly 2`] = `
       "width": 100,
     }
   }
-  timingFunction="ease"
 >
   <div
     style={
@@ -114,11 +128,19 @@ exports[`TransitioningContainer should render correctly 2`] = `
 </div>
 `;
 
-exports[`TransitioningContainer should render correctly 3`] = `
+exports[`TransitionBox should render correctly 3`] = `
 <div
   className="foo__container"
   style={
     Object {
+      "OTransition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
+      "WebkitTransition": "
+    width 100ms ease,
+    height 100ms ease
+  ",
       "height": 200,
       "transition": "
     width 100ms ease,
@@ -127,7 +149,6 @@ exports[`TransitioningContainer should render correctly 3`] = `
       "width": 100,
     }
   }
-  timingFunction="ease"
 >
   <div
     style={

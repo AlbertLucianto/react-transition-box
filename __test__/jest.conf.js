@@ -4,7 +4,7 @@ module.exports = {
   rootDir: path.resolve(__dirname, '../'),
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   moduleNameMapper: {
-    '^transitioning-container': '<rootDir>/src',
+    '^transition-box': '<rootDir>/src',
   },
   transform: {
     '^.+\\.tsx?$': 'ts-jest',

@@ -5849,11 +5849,6 @@ react-transition-group@^2.6.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react-transitioning-container@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-transitioning-container/-/react-transitioning-container-0.0.1.tgz#8dfb1f026bcde3ba0a55ed4d423731b0f8cf0954"
-  integrity sha512-PIQMgxMEXqmiGariKjQAogYRk3pt1zgWQV2HUaKPWRSAoW1CqXlxtyFvTNrkdCm1WKchYzlXJMe0mpRJJyttDw==
-
 react@^16.8.4:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.4.tgz#fdf7bd9ae53f03a9c4cd1a371432c206be1c4768"

@@ -6,7 +6,7 @@ import {
   CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
-import TransitioningContainer from '../../../src/TransitioningContainer';
+import TransitionBox from '../../../src/TransitionBox';
 import FormList from './formList';
 import './style.scss';
 
@@ -33,7 +33,7 @@ function Forms() {
 
   return (
     <div className="forms">
-      <TransitioningContainer duration={TRANSITION_DURATION}>
+      <TransitionBox duration={TRANSITION_DURATION}>
         <TransitionGroup className="forms__form-container">
           <CSSTransition
             key={idx}
@@ -43,7 +43,7 @@ function Forms() {
             <Form />
           </CSSTransition>
         </TransitionGroup>
-      </TransitioningContainer>
+      </TransitionBox>
       <div className="forms__button__container">
         <button
           onClick={goPrevious}

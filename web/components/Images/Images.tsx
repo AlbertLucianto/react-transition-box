@@ -6,7 +6,7 @@ import {
   CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
-import TransitioningContainer from '../../../src/TransitioningContainer';
+import TransitionBox from '../../../src/TransitionBox';
 import './style.scss';
 import urls from './urls';
 
@@ -25,7 +25,7 @@ function Images() {
 
   return (
     <div className="images">
-      <TransitioningContainer duration={TRANSITION_DURATION}>
+      <TransitionBox duration={TRANSITION_DURATION}>
         <TransitionGroup className="images__image-container">
           <CSSTransition
             key={imgIndex}
@@ -35,7 +35,7 @@ function Images() {
             <img src={urls[imgIndex]} className="images__image" />
           </CSSTransition>
         </TransitionGroup>
-      </TransitioningContainer>
+      </TransitionBox>
       <div className="images__button__container">
         <button
           onClick={goPrevious}

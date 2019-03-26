@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
 
+/**
+ * 
+ * @param ref 
+ * @param setStyle 
+ */
 export default function useResizeListener(
   ref: React.MutableRefObject<HTMLObjectElement>,
   setStyle: React.Dispatch<object>,

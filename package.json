@@ -1,21 +1,23 @@
 {
-  "name": "react-transitioning-container",
-  "version": "1.0.6",
+  "name": "react-transition-box",
+  "version": "1.0.0",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.min.js",
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:AlbertLucianto/react-transitioning-container.git",
+  "repository": "git@github.com:AlbertLucianto/react-transition-box.git",
   "author": "AlbertLucianto <albertlucianto@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlbertLucianto/react-transitioning-container/issues"
+    "url": "https://github.com/AlbertLucianto/react-transition-box/issues"
   },
-  "homepage": "https://github.com/AlbertLucianto/react-transitioning-container",
+  "homepage": "https://github.com/AlbertLucianto/react-transition-box",
   "keywords": [
     "react",
     "transition",
-    "animation"
+    "animation",
+    "layout",
+    "component"
   ],
   "scripts": {
     "unit": "cross-env NODE_ENV=test jest --config __test__/jest.conf.js --coverage",
@@ -60,7 +62,6 @@
     "react-test-renderer": "^16.8.4",
     "react-testing-library": "^6.0.0",
     "react-transition-group": "^2.6.1",
-    "react-transitioning-container": "^0.0.1",
     "rimraf": "^2.6.3",
     "rollup": "^1.4.1",
     "rollup-plugin-commonjs": "^9.2.1",

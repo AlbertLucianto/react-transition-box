@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { create } from 'react-test-renderer';
-import TransitioningContainer from '../src';
+import TransitionBox from '../src';
 
 const waitFor = async (ms: number) => new Promise((resolve) => {
   setTimeout(resolve, ms);
@@ -15,17 +15,17 @@ function Foo({ width, height }: IFooProps) {
   const style = useMemo(() => ({ width, height }), [width, height]);
 
   return (
-    <TransitioningContainer
+    <TransitionBox
       duration={100}
       timingFunction="ease"
       className="foo__container"
     >
       <div style={style} className="abc" />
-    </TransitioningContainer>
+    </TransitionBox>
   );
 }
 
-describe('TransitioningContainer', () => {
+describe('TransitionBox', () => {
   test('should render correctly', async (done) => {
     const style = {
       height: 200,

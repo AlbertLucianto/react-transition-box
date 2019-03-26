@@ -7,7 +7,7 @@ function ForkTag() {
       className="fork-tag"
       target="_blank"
       rel="noopener noreferrer"
-      href="https://github.com/AlbertLucianto/react-transitioning-container"
+      href="https://github.com/AlbertLucianto/react-transition-box"
     >
       <img
         src="https://image.flaticon.com/icons/svg/25/25231.svg"

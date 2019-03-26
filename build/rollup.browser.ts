@@ -12,7 +12,7 @@ const config = Object.assign({}, base, {
     globals: {
       react: 'React',
     },
-    name: 'TransitioningContainer',
+    name: 'TransitionBox',
   },
 });
 

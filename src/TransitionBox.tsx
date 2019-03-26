@@ -10,20 +10,24 @@ import {
 } from './styles';
 import useResizeListener from './useResizeListener';
 
-interface ITransitioningContainerProps {
+interface ITransitionBoxProps {
   children: JSX.Element[]|JSX.Element|string;
   timingFunction?: string;
   duration: number;
   [props: string]: any;
 }
 
-function TransitioningContainer({
+/**
+ * 
+ * @param param0 
+ */
+function TransitionBox({
   children,
   duration,
   timingFunction,
   style: propStyle,
   ...restProps
-}: ITransitioningContainerProps) {
+}: ITransitionBoxProps) {
   const ref = useRef<HTMLObjectElement>(null);
   const [style, setStyle] = useState({});
   const containerStyle = useMemo(
@@ -57,4 +61,4 @@ function TransitioningContainer({
   );
 }
 
-export default TransitioningContainer;
+export default TransitionBox;

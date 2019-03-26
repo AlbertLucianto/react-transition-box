@@ -20,7 +20,7 @@ export default {
       globals: {
         react: 'React',
       },
-      name: 'transitioning-container',
+      name: 'transition-box',
     },
   ],
   plugins: [

@@ -1,3 +1,3 @@
-import TransitioningContainer from './TransitioningContainer';
+import TransitionBox from './TransitionBox';
 
-export default TransitioningContainer;
+export default TransitionBox;
