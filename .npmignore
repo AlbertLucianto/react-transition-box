@@ -7,7 +7,11 @@ web
 .eslintrc.json
 tsconfig.json
 tslint.json
+.postcssrc.json
 .travis.yml
 codecov.yml
 tmp
 dist/web
+yarn-error.log
+yarn.lock
+tsconfig-for-build-config.json

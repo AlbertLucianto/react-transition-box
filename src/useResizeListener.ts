@@ -33,5 +33,5 @@ export default function useResizeListener(
         target.removeEventListener('resize', onResize);
       }
     };
-  }, [ref]);
+  }, [ref.current && ref.current.contentDocument]);
 }
